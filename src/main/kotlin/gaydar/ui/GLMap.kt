@@ -49,6 +49,7 @@ import gaydar.struct.*
 import gaydar.struct.Archetype.*
 import gaydar.struct.Archetype.Plane
 import gaydar.struct.CMD.ActorCMD.actorWithPlayerState
+import gaydar.struct.CMD.CharacterCMD.selfSpectatedCount
 import gaydar.struct.CMD.CharacterCMD.actorHealth
 import gaydar.struct.CMD.GameStateCMD.ElapsedWarningDuration
 import gaydar.struct.CMD.GameStateCMD.MatchElapsedMinutes
@@ -691,6 +692,7 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
 
 
     val numKills = playerNumKills[selfStateID] ?: 0
+    vak numSpecs = selfSpectatedCount
     val zero = numKills.toString()
     paint(fontCamera.combined) {
       val timeHints = if (RemainingTime > 0) "${RemainingTime}s"
@@ -703,8 +705,15 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
       hubFontShadow.draw(spriteBatch, "ALIVE", windowWidth - 85f, windowHeight - 29f)
       hubFont.draw(spriteBatch, "$NumAlivePlayers", windowWidth - 110f - layout.width / 2, windowHeight - 29f)
       val teamText = "$NumAliveTeams"
+      
+      
+      val numText1 "$numSpecs"
+      layout.setText(hubFont, numText)
+      spriteBatch.draw(hubpanel, windowWidth - 240f, windowHeight - 60f)
+      hubFontShadow.draw(spriteBatch, "EYE", windowWidth - 85f, windowHeight - 29f)
+      hubFont.draw(spriteBatch, "$numSpecs", windowWidth - 240f - layout.width / 2, windowHeight - 29f)
 
-
+      
       if (isTeamMatch) {
         layout.setText(hubFont, teamText)
         spriteBatch.draw(hubpanel, windowWidth - 260f, windowHeight - 60f)
