@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 var selfDirection = 0f
 val selfCoords = Vector3()
+var selfSpectatedCount = 0
 
 object CharacterCMD
 {
@@ -225,8 +226,8 @@ object CharacterCMD
           }
           55   ->
           {//new for 3.7.27.18
-            val SpectatedCount = propertyInt()
-            val b = SpectatedCount
+            val spectated = propertyInt()
+            selfSpectatedCount = spectated
           }
           56   ->
           {
