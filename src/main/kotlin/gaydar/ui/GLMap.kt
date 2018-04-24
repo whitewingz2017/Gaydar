@@ -709,9 +709,9 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
       
       val numText1 = "$numSpecs"
       layout.setText(hubFont, numText)
-      spriteBatch.draw(hubpanel, windowWidth - 240f, windowHeight - 60f)
-      hubFontShadow.draw(spriteBatch, "EYE", windowWidth - 85f, windowHeight - 29f)
-      hubFont.draw(spriteBatch, "$numSpecs", windowWidth - 240f - layout.width / 2, windowHeight - 29f)
+      spriteBatch.draw(hubpanel, windowWidth - 500f, windowHeight - 60f)
+      hubFontShadow.draw(spriteBatch, "EYE", windowWidth - 440f, windowHeight - 29f)
+      hubFont.draw(spriteBatch, "$numSpecs", windowWidth - 710f + 228f - layout.width / 2, windowHeight - 29f)
 
       
       if (isTeamMatch) {

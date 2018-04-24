@@ -227,7 +227,7 @@ object CharacterCMD
           }
           55   ->
           {//new for 3.7.27.18
-            var spectated = propertyInt()
+            val spectated = propertyInt()
             selfSpectatedCount = spectated
           }
           56   ->
