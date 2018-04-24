@@ -10,11 +10,12 @@ import java.util.concurrent.ConcurrentHashMap
 
 var selfDirection = 0f
 val selfCoords = Vector3()
-var selfSpectatedCount = 0
+
 
 object CharacterCMD
 {
   val actorHealth = ConcurrentHashMap<NetworkGUID, Float>()
+  var selfSpectatedCount = 0
   fun process(actor : Actor, bunch : Bunch, repObj : NetGuidCacheObject?, waitingHandle : Int, data : HashMap<String, Any?>) : Boolean
   {
     try
@@ -226,7 +227,7 @@ object CharacterCMD
           }
           55   ->
           {//new for 3.7.27.18
-            val spectated = propertyInt()
+            var spectated = propertyInt()
             selfSpectatedCount = spectated
           }
           56   ->

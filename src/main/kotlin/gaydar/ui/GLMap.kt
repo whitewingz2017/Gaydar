@@ -102,7 +102,7 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
   init {
     register(this)
   }
-
+  
   override fun onGameOver() {
     mapCamera.zoom = 1 / 4f
 
@@ -692,7 +692,7 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
 
 
     val numKills = playerNumKills[selfStateID] ?: 0
-    vak numSpecs = selfSpectatedCount
+	val numSpecs = "$selfSpectatedCount"
     val zero = numKills.toString()
     paint(fontCamera.combined) {
       val timeHints = if (RemainingTime > 0) "${RemainingTime}s"
@@ -707,7 +707,7 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
       val teamText = "$NumAliveTeams"
       
       
-      val numText1 "$numSpecs"
+      val numText1 = "$numSpecs"
       layout.setText(hubFont, numText)
       spriteBatch.draw(hubpanel, windowWidth - 240f, windowHeight - 60f)
       hubFontShadow.draw(spriteBatch, "EYE", windowWidth - 85f, windowHeight - 29f)
